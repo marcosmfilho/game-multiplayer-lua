@@ -1,0 +1,53 @@
+O que fazer para rodar o jogo Yoté?
+
+Lembrando que o Yoté foi feito em Lua na versão 5.2
+Com auxílio do framework Love2d
+
+********** CONFIGURANDO O AMBIENTE **************
+
+Antes de tudo, é preciso baixar algumas dependências:
+Instale o Love2d: https://love2d.org/#download
+No caso do linux é preciso baixar: liblove/love/dgb
+
+Instale a linguagem Lua na sua máquina
+Linux: sudo apt-get install lua5.2
+
+Instale o lua sockets:
+Linux: sudo apt-get install lua-socket
+
+Pronto, seu ambiente está configurado!
+
+********* EXECUTANDO O JOGO *****************
+Rodando o jogo pelo terminal:
+De preferência, abra dois terminais
+
+Em um, vá até a pasta do projeto e execute o comando:
+-> lua server.lua
+Esse comando irá fazer com que o servidor escute em uma porta necessária para o jogo
+
+No segundo terminal, execute o comando
+-> lua serverChat.lua
+Esse comando irá executar outro script que fará com que o servidor escute em outra porta para o chat do jogo
+
+O jogo em si pode ser executado pelo terminal, pelo comando:
+-> love /yoté
+
+Ou pelo executável
+
+************* ESTÁ IMPLEMENTADO *************
+Atualmente o jogo conta com:
+->Interface gráfica
+->Mover as peças, com efeito dragging em ambos os clientes
+->Controle de turno, só pode mover a peça se for a sua vez
+->Chat funcionando (falta um auto scroll)
+->Reiniciar partida
+->Desistência
+
+************ LEMBRETE ***************
+Este jogo tem fins educativos, a forma de se executar pode melhorar colocando o servidor na nuvem.
+
+Divirta-se
+
+
+
+
