@@ -14,10 +14,10 @@ First of all, you need to download some **dependencies**:
 **Love2d**: [install Love2d](https://love2d.org/#download "install Love2d")
 On linux: liblove/love/dgb
 
-Install the **lenguage Lua** on your PC
+Install the **lenguage Lua** on your PC<br />
 On linux: sudo apt-get install lua5.2
 
-Install the **LuaSockets** on your PC
+Install the **LuaSockets** on your PC<br />
 On linux: sudo apt-get install lua-socket
 
 Success, **configured!** :)
@@ -43,7 +43,7 @@ The game will open, place your name, the game will wait for the second player, y
 **Success!**
 
 # Libraries used
-ListBox DarkMetalic: https://github.com/darkmetalic/ListBox
+ListBox DarkMetalic: https://github.com/darkmetalic/ListBox<br />
 SUIT: https://love2d.org/wiki/SUIT
 
 # Game Rules
