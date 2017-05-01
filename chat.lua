@@ -3,16 +3,15 @@ local utf8 = require("utf8")
 local suit = require 'suit'
 local socket = require('socket')
 local json = require "json"
-local endereco, porta = 'localhost', 2021
 local updaterate = 0.1
-local controleTempo
 local  input = {text = ""}
+
+local address, port = 'localhost', 2021
 
 function chat.load()
   udpChat = socket.udp()
   udpChat:settimeout(0)
-  udpChat:setpeername(endereco, porta)
-  controleTempo = 0
+  udpChat:setpeername(address, port)
   love.keyboard.setKeyRepeat(true)
   list = require 'listbox'
   tlist = {x=475, y=390,font=font,ismouse=true,
@@ -44,19 +43,19 @@ function chat.update(dt)
     repeat
         data, msg = udpChat:receive()
         if data then
-          novaMensagem = json.decode(data)
-          local msg = novaMensagem[1] .. ':  ' .. novaMensagem[2]
-          player = novaMensagem[3]
+          newMessage = json.decode(data)
+          local msg = newMessage[1] .. ':  ' .. newMessage[2]
+          player = newMessage[3]
           list:additem(msg  ,"",true, player)
         elseif msg ~= "timeout" then print("Unknown network error: " .. tostring(msg)) end
     until not data
 end
 
-function chat.keypressed(key, idUsuario, nomeUsuario)
+function chat.keypressed(key, idUser, nameUser)
     suit.keypressed(key)
     list:key(key,true)
     if key == "return" and input.text ~= "" then
-        local datagrama = string.format("%s %s %s %s", 'novaMensagem',idUsuario,nomeUsuario,input.text)
+        local datagrama = string.format("%s %s %s %s", 'newMessage',idUser,nameUser,input.text)
         udpChat:send(datagrama)
         input.text = ""
     end

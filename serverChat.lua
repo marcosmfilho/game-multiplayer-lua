@@ -7,9 +7,8 @@ udp:setsockname("*", 2021)
 
 local chat = {}
 local players = {}
-controlecor = 0
-local data, msg, porta
-local idUsuario, cmd, pecas
+local data, msg, port
+local idUser, cmd, pieces
 
 function tablelength(T)
   counter = 0
@@ -23,22 +22,22 @@ end
 
 while true do
   repeat
-    data, ip_cliente, porta = udp:receivefrom()
-    local numeroUsuarios =  tablelength(chat)
-    if data and numeroUsuarios < 3 then
-      cmd, idUsuario, nomeUsuario, textoMensagem = data:match("^(%S*) (%S*) (%S*) (.*)")
-      if cmd == "novaMensagem" then
-        chat[idUsuario] = {ip = ip_cliente, porta = porta}
-        players[numeroUsuarios] = idUsuario
-        if players[1] == idUsuario then
+    data, ip_cliente, port = udp:receivefrom()
+    local numberUsers =  tablelength(chat)
+    if data and numberUsers < 3 then
+      cmd, idUser, nameUser, text = data:match("^(%S*) (%S*) (%S*) (.*)")
+      if cmd == "newMessage" then
+        chat[idUser] = {ip = ip_cliente, port = port}
+        players[numberUsers] = idUser
+        if players[1] == idUser then
           player = 'player1'
         else
           player = 'player2'
         end
-        local msg = {nomeUsuario, textoMensagem, player}
-        if textoMensagem ~= '' then
+        local msg = {nameUser, text, player}
+        if text ~= '' then
           for key, value in pairs(chat) do
-              udp:sendto(json.encode(msg), value.ip, value.porta)
+              udp:sendto(json.encode(msg), value.ip, value.port)
           end
         end
       end
