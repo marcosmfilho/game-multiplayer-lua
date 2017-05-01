@@ -48,8 +48,8 @@ SUIT: https://love2d.org/wiki/SUIT
 
 # Game Rules
 Yoté follows the following rules (not all of them are yet implemented):
-* House player has 12 pieces that start off the board
-* House player puts one piece at a time
+* Each player has 12 pieces that start off the board
+* Each player puts one piece at a time
 * The pieces can only move forward and side, never diagonally
 * The player can eat his opponent's piece by passing a house over it
 * If possible you can eat multiple pieces in the same move
