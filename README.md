@@ -1,76 +1,75 @@
-# Game multiplayer: Yoté com lov2d e LuaSockets
-Apresento para vocês o Yoté, que um jogo parecido com Damas, mas com algumas regras diferentes, porém, o mais importante é a implementação multiplayer, com LuaSocktes, controle de turno de jogadores, atualização de peças e chat para comunicação entre os jogadores. Aproveitem! :)
+# Game multiplayer: Yoté with lov2d and LuaSockets
 
-Manda uma **estrelinha(star)** aí, please :D
+I present to you Yoté, a very interesting board game, the rules of the game are described in the README. Remembering that the game is not fully implemented and the important thing is to contribute to the community with a multiplayer game, with real-time upgrading, turn control, sockets use and chat implementation. Thank you and have fun.
 
-# Imagens do jogo
+# Images of the game
 
-# Dependências
-### O que preciso para rodar o Yoté multiplayer?
-Antes de tudo, é preciso baixar algumas **dependências**:
-* Linguagem Lua
+# Dependencies
+### What do I need to run the game?
+First of all, you need to download some **dependencies**:
+* Lenguage Lua
 * LuaSockets
-* Framework Love2d para desenvolviemnto de jogos em Lua
+* Framework Love2d
 
-**Love2d**: [Instalar Love2d](https://love2d.org/#download "Instalar Love2d")
-No caso do linux é preciso baixar: liblove/love/dgb
+**Love2d**: [install Love2d](https://love2d.org/#download "install Love2d")
+On linux: liblove/love/dgb
 
-Instale a **linguagem Lua** na sua máquina
-No o processo é bem simples: sudo apt-get install lua5.2
+Install the **lenguage Lua** on your PC
+On linux: sudo apt-get install lua5.2
 
-Instale o **LuaSockets** na sua máquina
-Linux: sudo apt-get install lua-socket
+Install the **LuaSockets** on your PC
+On linux: sudo apt-get install lua-socket
 
-Pronto, seu ambiente está **configurado!** :)
+Success, **configured!** :)
 
-# Rodando o jogo
+# Run
 
-Ensinarei no **Linux** mas pode ser adequado para Windows também, certo? 
+I'll teach in **linux**, but it can run on others, okay?
 
-Abra o **terminal**
-Siga para a pasta di projeto, no meu caso:
+Open the **terminal**
+Go to the path of the game, in my case:
 * *cd /var/www/lua/game-multiplayer-lua*
 
-No jogo, nós temos o servidor rodando em duas portas diferentes, uma para o jogo em si e outra para o chat, vamos rodá-las pelo terminal, executando os comandos:
+In the game we have the server running on two different ports, one for the logic of the game and another for the chat, run the two scripts in Lua for the operation of the servers:
 * lua server.lua
 * lua serverChat.lua
 
-Pronto, o servidor está rodando perfeitamente, agora vamos executar o jogo, execute o comando na pasta anterior do projeto:
+Success, the server is running! Let's run the game by running the command (In the previous folder):
 * love game-multiplater-lua
 
-O jogo irá abrir, você coloca seu nome e ele ficará aguardando o segundo jogador entrar, você pode abrir outro terminal, executar o mesmo comando e abrir outro player, você pode jogar consigo mesmo para testar :)
 
-**Pronto, jogo rodando!**
+The game will open, place your name, the game will wait for the second player, you can open another terminal and run the game again simulating the second player :)
 
-# Bibliotecas utilizadas
-Contei com a ajuda de algumas implementações disponibilizadas pela nossa sensacional comunidade Lua.
-Para o chat, utilizei o ListBox DarkMetalic: https://github.com/darkmetalic/ListBox
-Para os inputs, utilizei o SUIT: https://love2d.org/wiki/SUIT
+**Success!**
 
-# Regras do jogo
-O Yoté segue as seguintes regras (nem todas estão implementadas ainda):
-* Casa jogador possui 12 peças que começam fora do tabuleiro
-* Casa jogador põe uma peça por vez
-* As peças só podem andar para frente e par o lado, jamais na diagonal
-* O jogador pode comer a peça de seu adversário passando uma casa por cima dela
-* Se possível pode comer múltiplas peças na mesma jogada
-* O jogador que comeu uma peça do adversário pode elimnar outra qualquer peça do adversário no tabuleiro
-* Ganha o jogador que comer todas as peças ou bloquear totalmente o adversário
+# Libraries used
+ListBox DarkMetalic: https://github.com/darkmetalic/ListBox
+SUIT: https://love2d.org/wiki/SUIT
 
-# O que está implementado e falta ser implementado?
+# Game Rules
+Yoté follows the following rules (not all of them are yet implemented):
+* House player has 12 pieces that start off the board
+* House player puts one piece at a time
+* The pieces can only move forward and side, never diagonally
+* The player can eat his opponent's piece by passing a house over it
+* If possible you can eat multiple pieces in the same move
+* The player who ate an opponent's piece can eliminate any other piece of the opponent on the board
+* Win the player who eats all the pieces or totally block the opponent
 
-**Está implementado**:
-* Multiplayer, inclusive vendo a jogada em tempo real do adversário
-* Validação de jogadas
-* Comer peças
-* Controle de turno
+# Current State
+
+**Is implemented**:
+* Multiplayer, including watching the opponent's real-time move
+* Validation of plays
+* Eating pieces
+* Turn control
 * Chat
-* Desistir de partida
+* Giving up on departure
 
-**Falta ser implementado**:
-* Comer múltiplas peças
-* Eliminar uma peça do adversário ao comer uma peça
-* Definir o ganhador
-* Eliminar alguns bugs
+**Missing to be implemented**:
+* Eat multiple pieces
+* Eliminate an opponent's piece while eating a piece
+* Define the winner
+* Delete some bugs
 
 
